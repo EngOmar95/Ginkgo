@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1087302186758",
+    "project_id": "ginkgo-797be",
+    "storage_bucket": "ginkgo-797be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087302186758:android:73074fe927a31a87399087",
+        "android_client_info": {
+          "package_name": "com.example.ginkgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087302186758-b83np9oqn9a7bc4hu9ukd2n9ubeh9ug9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARUpMc4qXPpmiHDLY2jd-04nipevD1gIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087302186758-b83np9oqn9a7bc4hu9ukd2n9ubeh9ug9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,88 @@
+<resources>
+
+    <string-array name="citys">
+
+        <item>1</item>
+        <item>3</item>
+        <item>6</item>
+    </string-array>
+    <string name="app_name">Ginkgo</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="Welcome">Welcome To</string>
+    <string name="back">back</string>
+    <string name="letsStart">Lets Start</string>
+    <string name="forgetPassword">forget Password ?</string>
+    <string name="forgetPasswordTitle">Forget Password</string>
+    <string name="sendEmail">Send Email</string>
+    <string name="chooesCharacter">Chooes a Character *</string>
+    <string name="nickName">NickName</string>
+    <string name="Dob"> Brith Date </string>
+    <string name="done">Done</string>
+    <string name="SigningUp">Signing Up</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="alarma">Alarms</string>
+    <string name="reminders">Reminders</string>
+    <string name="tasks">Tasks</string>
+    <string name="setting">Setting</string>
+    <string name="calender">Calender</string>
+    <string name="introducation">Now , you can Finally fully manage your day to -day using single Application.
+
+Make your character and your self happy
+By a archiving your taska All day
+</string>
+    <string name="AlarmsPage">Alarms</string>
+    <string name="newAlarm">New Alarm</string>
+    <string name="name">Name</string>
+    <string name="selectTime">Select Time</string>
+    <string name="create">Create</string>
+    <string name="Reminders">Reminders</string>
+    <string name="Name">Name</string>
+    <string name="date">Date *</string>
+    <string name="time">Time</string>
+    <string name="location">Location</string>
+    <string name="selectCity">Select City</string>
+    <string name="newReminder">New Reminder</string>
+    <string name="fab_content_desc">new Reminder</string>
+    <string name="commint">Commint</string>
+    <string name="addAttachment">Add Attachment</string>
+    <string name="profile">Profile</string>
+    <string name="language">Language</string>
+    <string name="signou">Sign Out</string>
+    <string name="madeByWho">Made with love - Ginkgo Team</string>
+    <string name="email">Email</string>
+    <string name="newPassword">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="save">Save</string>
+    <string name="chooesLanguage">Chooes A Language</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="change">Change</string>
+    <string name="confMessage">Are you sure want to sign out ?</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
+    <string name="aboutUs">About_Us</string>
+    <string name="madeBy">Made By :</string>
+    <string name="AmaniAlmotairy">Amani Almotairy</string>
+    <string name="ShahadAlGhannam">Shahad Al-Ghannam</string>
+    <string name="RandaAlwatban">Randa Alwatban</string>
+    <string name="AsrarAlqahtani">Asrar Alqahtani</string>
+    <string name="MeaadAlhilabi">Meaad Alhilabi</string>
+    <string name="aboutus">About us</string>
+    <string name="languages">Language</string>
+    <string name="edit">Edit</string>
+    <string name="ok">ok</string>
+    <string name="location2">Location</string>
+    <string name="part1OfabotUs">Ginkgo Application is proudly made by  PNU students As Graduation project .</string>
+    <string name="part2OfabotUs">We have put so much effort and love into this Application!</string>
+    <string name="part3OfabotUs">We are so delighted with how it turned Out and very grateful for all the help we’ve received</string>
+    <string name="part4OfabotUs">"We are not only the Ginkgo team , but we also friends. "</string>
+    <string name="editReminder">Edit Reminder</string>
+    <string name="Day">Day</string>
+    <string name="Invalid_Emil">Email Invalid</string>
+    <string name="Invalid_Password">should be password content on 8 characters and numbers</string>
+    <string name="Invalid_ConfPassword">password does not match</string>
+    <string name="Invalid_Required">required</string>
+
+</resources>

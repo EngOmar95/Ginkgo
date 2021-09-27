@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color"
+    android:orientation="vertical"
+    tools:context=".CalendarPage">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="50px"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="20px"
+            android:drawableLeft="@drawable/ic_baseline_menu_24"
+            android:foregroundGravity="left"
+            android:gravity="left"
+            android:textColor="@color/baseColor"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/r"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+
+        android:textSize="20sp"
+        android:textColor="@color/baseColor"
+        android:text="@string/calendar"
+         />
+    <org.naishadhparmar.zcustomcalendar.CustomCalendar
+        android:id="@+id/custom_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:day_of_week_length="1"
+        app:day_of_week_start_from="sunday"
+        app:month_year_format="full_month__with_year"
+
+    app:row_height="50dp"
+   />
+
+    <ListView
+        android:id="@+id/listView"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:fadingEdge="none"
+        android:scrollbars="vertical">
+
+    </ListView>
+
+</LinearLayout>

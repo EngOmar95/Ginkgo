@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color"
+    android:orientation="vertical"
+    tools:context=".NewReminder">
+
+    <TextView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="20px"
+        android:drawableLeft="@drawable/ic_baseline_menu_24"
+        android:foregroundGravity="left"
+        android:gravity="left"
+        android:textColor="@color/baseColor"
+        android:textStyle="bold" />
+
+
+    <TextView
+         android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/newReminder"
+        android:textColor="@color/baseColor"
+        android:textSize="20sp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="900px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+               
+                android:hint="@string/Name"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/reminderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                   />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="40px"
+                    android:text="@string/date"
+                    android:textColor="#181819"
+                    android:textSize="20sp" />
+
+                <CalendarView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/male" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="40px"
+                    android:text="@string/time"
+                    android:textColor="#181819"
+                    android:textSize="20sp" />
+
+                <TimePicker
+
+
+                    android:id="@+id/time"
+                    android:layout_width="900px"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="70px"
+                    android:gravity="center"
+                    android:timePickerMode="spinner"
+                    android:text="@string/selectTime"
+                    android:textColor="#181819"
+                    android:textSize="20sp"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:text="@string/location"
+                    android:textColor="#181819"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/location2"
+
+                    android:layout_height="match_parent">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300px"
+                android:orientation="horizontal"
+                android:layout_marginTop="30px">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:text="@string/commint"
+                    android:textColor="#181819"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/commint"
+                  
+                    android:layout_height="match_parent">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Commint"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:text="@string/addAttachment"
+                    android:textColor="#181819"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="30px"
+
+                    android:layout_marginRight="20dp"
+                    android:drawableLeft="@drawable/reminder_add_24"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/baseColor"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="300px"
+                    android:layout_height="300px"
+                    android:layout_gravity="right"
+                    android:foregroundGravity="right"
+                    android:visibility="gone"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addReminder"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shap_buttens"
+                android:fontFamily="sans-serif"
+                android:text="Create"
+              
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

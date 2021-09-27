@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color"
+    android:orientation="vertical"
+    tools:context=".SettingPage">
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="20px"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+        android:foregroundGravity="left"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:text="@string/back"
+        android:textColor="@color/baseColor"
+        android:textStyle="bold" />
+
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+
+        android:text="@string/setting"
+        android:textColor="@color/baseColor"
+        android:textSize="20sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/profile"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/shap_buttens"
+            android:text="@string/profile"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/languages"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="false"
+            android:background="@drawable/shap_buttens"
+            android:text="@string/language"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="25dp" />
+
+
+        <Button
+            android:id="@+id/signOut"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="false"
+            android:background="@drawable/shap_buttens"
+            android:fontFamily="sans-serif"
+            android:text="@string/signou"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="300px"
+            android:layout_marginRight="20dp"
+            android:enabled="false"
+            android:gravity="end|bottom"
+            android:paddingTop="20px"
+            android:text="@string/madeByWho"
+            android:textColor="#100F0F"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

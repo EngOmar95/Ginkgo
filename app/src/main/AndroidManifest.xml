@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ginkgo">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl">
+        <activity android:name=".UpadeReminder"></activity>
+        <activity android:name=".About_Us"></activity>
+        <activity android:name=".ProfilePage" />
+        <activity android:name=".SettingPage"></activity>
+        <activity android:name=".NewReminder" />
+        <activity android:name=".ReminderPage" />
+
+        <service
+            android:name=".Service.Service"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".AlarmsPage" />
+        <activity android:name=".HomePage" />
+        <activity android:name=".SigningUp" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".ForgetPassword" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".MainPage" />
+        <activity android:name=".CalendarPage" />
+        <activity android:name=".StartPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

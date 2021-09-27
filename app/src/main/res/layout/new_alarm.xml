@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="40dp"
+        android:layout_margin="10dp"
+    android:layout_gravity="center"
+    android:background="@color/Color"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+       android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+
+        android:text="@string/newAlarm"
+        android:textColor="@color/baseColor"
+        android:textSize="20sp"
+         />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="900px"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:layout_marginTop="20px">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+           android:id="@+id/alarmName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TimePicker
+
+        android:id="@+id/time"
+        android:layout_width="900px"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70px"
+        android:gravity="center"
+        android:timePickerMode="spinner"
+        android:text="@string/selectTime"
+        android:textColor="#181819"
+        android:textSize="20sp"
+        app:srcCompat="@drawable/logo" />
+    <Button
+        android:id="@+id/create"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shap_buttens"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="false"
+        android:text="@string/create"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

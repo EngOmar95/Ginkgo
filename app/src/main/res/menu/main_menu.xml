@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item  android:id="@+id/home"
+        android:title="@string/home"
+       
+
+        app:showAsAction="ifRoom"></item>
+    <item  android:id="@+id/calendar"
+        android:title="@string/calendar"
+
+        ></item>
+
+    <item  android:id="@+id/alarma"
+        android:title="@string/alarma"
+
+        ></item>
+
+    <item  android:id="@+id/reminders"
+        android:title="@string/reminders"
+
+        ></item>
+
+  
+
+   
+
+
+    <item  android:id="@+id/setting"
+        android:title="@string/setting"
+       
+
+        >
+
+        <menu>
+
+
+
+            <item  android:id="@+id/profile"
+                android:title="@string/profile"
+
+                ></item>
+
+            <item  android:id="@+id/changeLanguage"
+                android:title="@string/languages"
+
+                ></item>
+
+            <item  android:id="@+id/SignOt"
+                android:title="@string/signou"
+
+                ></item>
+
+        </menu>
+    </item>
+    <item  android:id="@+id/aboutUsMenu"
+        android:title="@string/aboutus"
+
+        ></item>
+</menu>
