@@ -7,7 +7,11 @@ import android.preference.PreferenceManager;
 import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
+
+import com.example.ginkgo.Dialog.ProgressBarDialog;
 import com.example.ginkgo.Share.Share;
 import com.example.ginkgo.HomePage;
 import com.example.ginkgo.SignIn;
@@ -36,17 +40,19 @@ public class UserService {
     SharedPreferences sp;
     String USER_ID = "";
     String EMAIL = "";
+    ProgressBarDialog progressBarDialog = new ProgressBarDialog();
 
     public UserService(Context context) {
         this.context = context;
         sp = PreferenceManager.getDefaultSharedPreferences(context);
-        EMAIL= sp.getString("Email", "0");
+        EMAIL = sp.getString("Email", "0");
         USER_ID = sp.getString("userId", "0");
     }
 
     public void createAuthUser(Context context, String email, String password, User user) {
 
 
+        progressBarDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "");
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -54,9 +60,11 @@ public class UserService {
 
                     createUser(user);
                     intent = new Intent(context, SignIn.class);
+                    progressBarDialog.dismiss();
                     share.showDialog(context, "Registration Successful", null);
                     context.startActivity(intent);
                 } else {
+                    progressBarDialog.dismiss();
                     share.showDialog(context, "Registration failed", null);
 
                 }
@@ -79,7 +87,7 @@ public class UserService {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    getUserId(email,password, context);
+                    getUserId(email, password, context);
                 } else {
                     share.showDialog(context, "Email or password invalid", null);
                 }
@@ -87,7 +95,8 @@ public class UserService {
         });
     }
 
-    private void getUserId(String email, String password,Context context) {
+    private void getUserId(String email, String password, Context context) {
+        progressBarDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "");
         SharedPreferences saved_values = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor edit = saved_values.edit();
         Query databaseReference = FirebaseDatabase.getInstance().getReference(USERS).
@@ -100,14 +109,14 @@ public class UserService {
                         User user = snapshots.getValue(User.class);
                         edit.putString("userId", user.getUserId().toString());
                         edit.putString("Email", email);
-                        edit.putString("password",password);
-                        edit.putString("gender",user.getGender());
+                        edit.putString("password", password);
+                        edit.putString("gender", user.getGender());
                         edit.commit();
                         Intent intent = new Intent(context, HomePage.class);
                         context.startActivity(intent);
                     }
                 } else {
-
+                    progressBarDialog.dismiss();
                     share.showDialog(context, "an error occurred", null);
                 }
 
@@ -164,11 +173,12 @@ public class UserService {
 
 
         user.setUserId(USER_ID);
-        updateEmailInAuth(user.getEmail(),EMAIL);
+        updateEmailInAuth(user.getEmail(), EMAIL);
         user.setPassword(null);
         updateUser.child(USER_ID).setValue(user);
     }
-    private void updateEmailInAuth(String newEmail , String oldEmail) {
+
+    private void updateEmailInAuth(String newEmail, String oldEmail) {
 
         AuthCredential credential = EmailAuthProvider
                 .getCredential(oldEmail, sp.getString("password", "0")); // Current Login Credentials \\

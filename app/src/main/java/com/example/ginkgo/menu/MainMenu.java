@@ -22,6 +22,7 @@ import com.example.ginkgo.HomePage;
 import com.example.ginkgo.ProfilePage;
 import com.example.ginkgo.R;
 import com.example.ginkgo.ReminderPage;
+import com.example.ginkgo.Service.Service;
 
 public class MainMenu extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -73,6 +74,8 @@ public class MainMenu extends AppCompatActivity implements PopupMenu.OnMenuItemC
                 return true;
             case R.id.SignOt:
                 SignOutDialog signOutDialog =new SignOutDialog();
+                Intent runService = new Intent(context, Service.class);
+                context.stopService(runService);
                 signOutDialog.showDialog(context);
                 return true;
             case R.id.reminders:

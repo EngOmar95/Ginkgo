@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.ginkgo.Adapaters.ListAlarmsAdapater;
+import com.example.ginkgo.Dialog.ProgressBarDialog;
 import com.example.ginkgo.Share.Share;
 import com.example.ginkgo.entity.Alarm;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +28,7 @@ public class AlarmService {
     Context context;
     SharedPreferences sp;
     String USER_ID = "";
+    ProgressBarDialog progressBarDialog = new ProgressBarDialog();
 
     public AlarmService(Context context) {
         this.context = context;
@@ -34,6 +37,7 @@ public class AlarmService {
     }
 
     public void addAlarm(Alarm alarm) {
+        progressBarDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "");
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(SERVICE).child(ALARMS);
         String AlarmId = String.valueOf(databaseReference.push().getKey());
         String userId = sp.getString("userId", "0");
@@ -41,6 +45,7 @@ public class AlarmService {
         alarm.setAlarmId(AlarmId);
         alarm.setOn(false);
         databaseReference.child(AlarmId).setValue(alarm);
+        progressBarDialog.dismiss();
     }
 
     public void displayAlarmByListView(RecyclerView listViewOfAlarms) {

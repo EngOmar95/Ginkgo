@@ -11,11 +11,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ginkgo.Adapaters.ListCalendarAdapater;
 import com.example.ginkgo.Adapaters.ListReminderAdapter;
+import com.example.ginkgo.Dialog.ProgressBarDialog;
 import com.example.ginkgo.R;
 import com.example.ginkgo.ReminderPage;
 import com.example.ginkgo.Share.Share;
@@ -45,6 +47,7 @@ public class ReminderService {
     SharedPreferences sp;
     String USER_ID = "";
     String GENDER;
+    ProgressBarDialog progressBarDialog = new ProgressBarDialog();
 
     public ReminderService(Context context) {
         this.context = context;
@@ -54,7 +57,7 @@ public class ReminderService {
     }
 
     public void addReminder(Reminder reminder) {
-
+        progressBarDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "");
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(SERVICE).child(REMINDERS);
         String ReminderId = String.valueOf(databaseReference.push().getKey());
@@ -62,6 +65,7 @@ public class ReminderService {
         reminder.setUserId(USER_ID);
 
         databaseReference.child(ReminderId).setValue(reminder);
+        progressBarDialog.dismiss();
 
 
     }
@@ -141,7 +145,7 @@ public class ReminderService {
 
     public void updateReminder(Reminder reminder, String reminderId) {
         if (share.isNetworkConnected(context)) {
-
+            progressBarDialog.show(((FragmentActivity) context).getSupportFragmentManager(), "");
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(SERVICE).child(REMINDERS);
 
             reminder.setReminderId(reminderId);
@@ -150,6 +154,7 @@ public class ReminderService {
             databaseReference.child(reminderId).setValue(reminder);
             Intent intent = new Intent(context, ReminderPage.class);
             context.startActivity(intent);
+            progressBarDialog.dismiss();
 
         } else {
             share.showDialog(context, "check please on internet", null);
@@ -180,7 +185,7 @@ public class ReminderService {
                         }
                     }
                     int sum = (int) ((done / allTask) * 100);
-
+                      if(allTask!=0) {
                     if (sum < 100) {
                         todayMode.setText("You Can Do Better!");
                         if (GENDER.equals("male")) {
@@ -198,10 +203,11 @@ public class ReminderService {
                             imageMode.setImageResource(R.drawable.female_happy);
                         }
 
-
+                    }
+                          percentageTaskOfDay.setText("You Had Done " + sum + "% Of Daily Tasks");
                     }
 
-                    percentageTaskOfDay.setText("You Had Done " + sum + "% Of Daily Tasks");
+
 
                 }
 
